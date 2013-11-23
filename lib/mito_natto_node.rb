@@ -19,11 +19,17 @@ class MitoNattoNode
     [ELEMENTS_JA, ELEMENTS_EN].each do |elements|
       if elements.include?(method_name.to_s)
         return features[elements.find_index(method_name.to_s)]
-      elsif elements.include?(method_name.to_s)
-        return features[elements.find_index(method_name.to_s)]
       end
     end
+    super
+  end
 
+  def respond_to?(method_name)
+    [ELEMENTS_JA, ELEMENTS_EN].each do |elements|
+      if elements.include?(method_name.to_s)
+        return true
+      end
+    end
     super
   end
 

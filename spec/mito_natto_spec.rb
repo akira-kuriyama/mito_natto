@@ -191,7 +191,7 @@ describe MitoNatto do
           expect(node.pronunciation).to eq(features_result[node.surface]['発音'])
 
           expect(node.features).to eq(features_result[node.surface].values)
-          end
+        end
       end
     end
   end
